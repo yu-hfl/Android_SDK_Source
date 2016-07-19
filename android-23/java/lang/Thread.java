@@ -46,15 +46,24 @@ import libcore.util.EmptyArray;
  * {@link ThreadGroup}. The runtime keeps its own threads in the system thread
  * group.
  *
+ * 线程是一个并发执行单元。对于被调方法、参数和局部变量，他有自己的调用栈。每个应用至少有一个线程(主线程)运行。
+ * 运行时保持自己的线程在系统线程组中。
+ *
  * <p>There are two ways to execute code in a new thread.
  * You can either subclass {@code Thread} and overriding its {@link #run()} method,
  * or construct a new {@code Thread} and pass a {@link Runnable} to the constructor.
  * In either case, the {@link #start()} method must be called to actually execute
  * the new {@code Thread}.
  *
+ * 有两种方法可以在一个新线程执行代码。你可以子类线程重写run()方法,或构造一个新的线程和传递Runnable给构造函数。
+ * 在这两种情况下,必须调用start()方法来执行新线程。
+ *
  * <p>Each {@code Thread} has an integer priority that affect how the thread is
  * scheduled by the OS. A new thread inherits the priority of its parent.
  * A thread's priority can be set using the {@link #setPriority(int)} method.
+ *
+ * 每个线程都有一个影响OS调度线程的优先级。一个新线程继承了父类的优先级。可以使用setPriority(int)方法设置线程的优先级。
+ *
  */
 public class Thread implements Runnable {
     private static final int NANOS_PER_MILLI = 1000000;
